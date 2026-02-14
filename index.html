@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azaliya | Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sand: '#FDFCF8',     /* Lighter, cleaner Cream */
+              ink: '#2A1A10',      /* Deep Coffee/Black */
+              spice: '#8B4513',    /* Accent Text */
+              gold: '#D4AF37',     /* Classic Gold */
+              saffron: '#F4C430',  /* Vibrant Yellow/Orange */
+              honey: '#EBA937',    /* Rich Amber */
+              mist: '#FFFDD0',
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Inter"', 'sans-serif'],
+            },
+            cursor: {
+              none: 'none',
+            },
+            animation: {
+              'spin-slow': 'spin 12s linear infinite',
+              'breathe': 'breathe 8s ease-in-out infinite',
+              'morph': 'morph 8s ease-in-out infinite',
+            },
+            keyframes: {
+              breathe: {
+                '0%, 100%': { transform: 'scale(1)', opacity: '0.05' },
+                '50%': { transform: 'scale(1.1)', opacity: '0.1' },
+              },
+              morph: {
+                '0%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+                '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+                '100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }
+              }
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        cursor: none;
+      }
+      body {
+        background-color: #FDFCF8;
+        color: #2A1A10;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Custom Cursor */
+      .cursor-dot,
+      .cursor-outline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9999;
+        pointer-events: none;
+        mix-blend-mode: exclusion;
+      }
+      .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #F4C430;
+      }
+      .cursor-outline {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(139, 69, 19, 0.5);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+      }
+
+      /* Cinematic Grain */
+      .grain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.04;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* Liquid Background Animation */
+      .fog-container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        overflow: hidden;
+        background: #FDFCF8;
+      }
+      .fog-blob {
+        position: absolute;
+        filter: blur(60px);
+        opacity: 0.6;
+        animation: fogMove 25s infinite alternate ease-in-out, morph 15s infinite ease-in-out;
+      }
+      @keyframes fogMove {
+        0% { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(15%, -15%) scale(1.1); }
+      }
+      
+      /* Glassmorphism Utilities */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(212, 175, 55, 0.1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.34.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <div class="grain"></div>
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-outline" class="cursor-outline"></div>
+
+    <script>
+      const dot = document.getElementById("cursor-dot");
+      const outline = document.getElementById("cursor-outline");
+
+      window.addEventListener("mousemove", (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        dot.style.left = `${posX}px`;
+        dot.style.top = `${posY}px`;
+
+        outline.animate({
+          left: `${posX}px`,
+          top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+      });
+
+      document.addEventListener('mouseover', (e) => {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('.magnetic-target')) {
+          outline.style.width = '60px';
+          outline.style.height = '60px';
+          outline.style.backgroundColor = 'rgba(244, 196, 48, 0.1)';
+          outline.style.border = '1px solid transparent';
+        } else {
+          outline.style.width = '40px';
+          outline.style.height = '40px';
+          outline.style.backgroundColor = 'transparent';
+          outline.style.border = '1px solid rgba(139, 69, 19, 0.5)';
+        }
+      });
+    </script>
+  </body>
+</html>
