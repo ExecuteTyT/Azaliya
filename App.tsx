@@ -147,8 +147,8 @@ const Hero = () => {
            
            {/* Title Container */}
            <div className="relative z-10">
-             {/* BUG FIX: Added p-6 -m-6 to prevent italic tails from clipping horizontally or vertically */}
-             <div className="overflow-hidden p-6 -m-6">
+             {/* BUG FIX: Increased bottom padding to pb-16 to catch descenders like 'y' */}
+             <div className="overflow-hidden px-6 pt-6 pb-16 -mx-6 -mt-6 -mb-16">
                 <motion.h1 
                   initial={{ y: "110%", rotate: 3 }}
                   animate={{ y: 0, rotate: 0 }}
