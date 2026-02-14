@@ -18,7 +18,7 @@ const LINE_MASK = {
 
 const BreathingWatermark = () => (
     <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
-        <div className="animate-breathe font-serif text-[120vh] text-gold/5 leading-none select-none mix-blend-overlay blur-sm">
+        <div className="animate-breathe font-serif text-[120vh] text-spice/3 leading-none select-none mix-blend-overlay blur-sm">
             A
         </div>
     </div>
@@ -38,7 +38,7 @@ const LiquidShape = () => {
     return (
         <div className="w-full h-[400px] md:h-[500px] relative flex items-center justify-center overflow-hidden rounded-sm my-12 glass-card">
             <motion.div 
-                className="absolute w-[150%] h-[150%] bg-gradient-to-tr from-saffron via-gold to-honey opacity-40 blur-3xl"
+                className="absolute w-[150%] h-[150%] bg-gradient-to-tr from-rose/30 via-mist/20 to-cream/30 opacity-30 blur-3xl"
                 animate={{ rotate: 360, scale: [1, 1.2, 1] }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
             />
@@ -118,9 +118,9 @@ const Divider = () => (
 const Background = () => {
   return (
     <div className="fog-container">
-      <div className="fog-blob bg-saffron w-[50vw] h-[50vw] top-[-10%] left-[-10%] mix-blend-multiply" />
-      <div className="fog-blob bg-honey w-[60vw] h-[60vw] bottom-[-10%] right-[-20%] mix-blend-multiply delay-1000" />
-      <div className="fog-blob bg-gold w-[40vw] h-[40vw] top-[30%] left-[30%] opacity-40 mix-blend-overlay" />
+      <div className="fog-blob bg-rose w-[50vw] h-[50vw] top-[-10%] left-[-10%] mix-blend-multiply opacity-30" />
+      <div className="fog-blob bg-mist w-[60vw] h-[60vw] bottom-[-10%] right-[-20%] mix-blend-multiply delay-1000 opacity-25" />
+      <div className="fog-blob bg-saffron w-[40vw] h-[40vw] top-[30%] left-[30%] opacity-20 mix-blend-overlay" />
     </div>
   );
 };
@@ -137,7 +137,7 @@ const Hero = () => {
         <span className="font-sans text-[10px] tracking-[0.2em] uppercase font-medium">Special Invitation</span>
         <div className="flex gap-4">
             <span className="font-sans text-[10px] tracking-[0.2em] uppercase font-medium">Feb 14</span>
-            <div className="w-2 h-2 rounded-full bg-saffron animate-pulse mt-1 shadow-[0_0_10px_rgba(244,196,48,0.8)]" />
+            <div className="w-2 h-2 rounded-full bg-saffron animate-pulse mt-1 shadow-[0_0_10px_rgba(212,165,116,0.4)]" />
         </div>
       </div>
 
@@ -164,7 +164,7 @@ const Hero = () => {
                 initial={{ width: 0 }}
                 animate={{ width: 120 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="absolute -right-16 top-16 h-[2px] bg-saffron hidden md:block" 
+                className="absolute -right-16 top-16 h-[2px] bg-spice/30 hidden md:block" 
              />
            </div>
            
@@ -177,7 +177,7 @@ const Hero = () => {
              </SplitText>
              
              <div className="mt-6 flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 md:gap-4">
-               <div className="h-[1px] w-8 md:w-12 bg-saffron" />
+               <div className="h-[1px] w-8 md:w-12 bg-spice/40" />
                <SplitText delay={6} className="font-serif italic text-lg md:text-xl text-spice">От Ислама</SplitText>
              </div>
            </div>
@@ -207,7 +207,7 @@ const Invitation = () => {
       <div className="max-w-3xl mx-auto flex flex-col items-center justify-center text-center">
         
         <div className="w-full">
-          <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-saffron mb-6 block font-bold">Контекст</span>
+          <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-spice/70 mb-6 block font-bold">Контекст</span>
           
           <div className="flex justify-center">
             <SplitText className="font-serif text-4xl md:text-5xl leading-[1.15] text-ink justify-center" type="header">
@@ -246,7 +246,7 @@ const Atmosphere = () => {
             <SplitText className="font-serif italic text-5xl md:text-7xl text-ink leading-tight">
               Вкус и Тепло.
             </SplitText>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-saffron/20 rounded-full blur-3xl mix-blend-multiply" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-rose/15 rounded-full blur-3xl mix-blend-multiply" />
           </div>
 
           <div className="flex flex-col justify-center space-y-16">
@@ -272,7 +272,7 @@ const Atmosphere = () => {
 
 const TicketStub = ({ label, value, icon: Icon }: { label: string, value: string, icon: React.ElementType }) => (
     <div className="flex flex-col space-y-2 border-l border-dashed border-spice/20 pl-6 py-2 hover:bg-white/40 transition-colors duration-300">
-        <div className="flex items-center gap-2 text-saffron">
+        <div className="flex items-center gap-2 text-spice/80">
             <Icon size={14} />
             <span className="font-sans text-[9px] uppercase tracking-[0.2em] font-semibold">{label}</span>
         </div>
@@ -311,7 +311,7 @@ const Logistics = () => {
 
             {/* Transfer Note */}
             <div className="mt-12 pt-8 border-t border-spice/10 pl-0 md:pl-16">
-                 <div className="flex items-start gap-4 p-4 bg-saffron/10 rounded-lg border border-saffron/20">
+                 <div className="flex items-start gap-4 p-4 bg-rose/20 rounded-lg border border-spice/15">
                      <Car className="text-spice shrink-0 mt-1" size={20} />
                      <div>
                          <span className="font-sans text-xs font-bold uppercase tracking-wider text-spice block mb-1">Transfer Included</span>
@@ -342,7 +342,7 @@ const Footer = () => {
     <section className="min-h-[80vh] flex flex-col justify-center items-center px-6 text-center relative overflow-hidden bg-ink text-sand">
       {/* Warm Golden Glow in Footer */}
       <motion.div 
-        className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-tr from-saffron/20 to-transparent top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-3xl"
+        className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-tr from-honey/15 via-rose/10 to-transparent top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-3xl"
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -379,7 +379,7 @@ const Footer = () => {
 
 const App = () => {
   return (
-    <main className="w-full relative selection:bg-saffron selection:text-ink">
+    <main className="w-full relative selection:bg-rose/30 selection:text-ink">
       <BreathingWatermark />
       <VerticalLines />
       <Background />

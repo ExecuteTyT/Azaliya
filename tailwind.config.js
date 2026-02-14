@@ -12,11 +12,13 @@ export default {
       colors: {
         sand: '#FDFCF8',     /* Lighter, cleaner Cream */
         ink: '#2A1A10',      /* Deep Coffee/Black */
-        spice: '#8B4513',    /* Accent Text */
-        gold: '#D4AF37',     /* Classic Gold */
-        saffron: '#F4C430',  /* Vibrant Yellow/Orange */
-        honey: '#EBA937',    /* Rich Amber */
-        mist: '#FFFDD0',
+        spice: '#8B6F5E',    /* Soft Brown - более приглушенный */
+        gold: '#C9A96B',     /* Muted Gold - приглушенное золото */
+        saffron: '#D4A574',  /* Warm Peach - теплый персик вместо яркого желтого */
+        honey: '#B8956A',    /* Muted Amber - приглушенный янтарь */
+        mist: '#F5F1EB',     /* Soft Mist - мягкий туман */
+        rose: '#E8D5C4',     /* Soft Rose - мягкий розовый */
+        cream: '#FAF7F2',    /* Warm Cream - теплый крем */
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'serif'],
