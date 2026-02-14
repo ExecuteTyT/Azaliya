@@ -136,7 +136,7 @@ const Hero = () => {
       <div className="flex justify-between items-start w-full px-6 md:px-12 opacity-80 z-20 text-spice">
         <span className="font-sans text-[10px] tracking-[0.2em] uppercase font-medium">Special Invitation</span>
         <div className="flex gap-4">
-            <span className="font-sans text-[10px] tracking-[0.2em] uppercase font-medium">Feb 14</span>
+            <span className="font-sans text-[10px] tracking-[0.2em] uppercase font-medium">Feb 15</span>
             <div className="w-2 h-2 rounded-full bg-saffron animate-pulse mt-1 shadow-[0_0_10px_rgba(212,165,116,0.4)]" />
         </div>
       </div>
@@ -303,7 +303,7 @@ const Logistics = () => {
                 </div>
                 
                 <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <TicketStub icon={Calendar} label="Date" value="14.02" />
+                    <TicketStub icon={Calendar} label="Date" value="15.02" />
                     <TicketStub icon={Clock} label="Time" value="19:00*" />
                     <TicketStub icon={MapPin} label="Location" value="Пашмир" />
                 </div>
@@ -328,7 +328,7 @@ const Logistics = () => {
                     Dress Code: <span className="text-ink font-medium">Твой абсолютный комфорт. Это единственное правило.</span>
                  </p>
                  <div className="font-mono text-[10px] text-spice/30">
-                    ID: 4159-AZ-14
+                    ID: 4159-AZ-15
                  </div>
             </div>
         </motion.div>
